@@ -1,0 +1,64 @@
+/*Google Fonts Import*/
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300&family=Tangerine:wght@400;700&display=swap');
+
+
+/* Color Palette */
+/* HEX colors 
+--cape-honey: #fde3a8;
+--equator: #e2a768;
+--danube: #598fd0;
+--copper: #c07637;
+--cloud-burst: #1c2f47;
+--cornflower: #80aee3;
+--astral: #3071ae;
+--raw-sienna: #d6903b;
+--blumine: #1a5573; */
+
+/*CSS Varibles*/
+:root {
+    --font-primary: 'Tangerine', cursive;
+    --font-secondary: 'Funnel Display', sans-serif;
+    --color-primary: #00465b;
+    --color-secondary: #0e6272;
+    --color-accent: #1a5573;
+    --color-tertiary: #fde3a8;
+
+}
+/* Global Styles */
+body {
+    font-family: var(--font-secondary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    color: var(--color-primary);
+}
+p {
+    font-family: var(--font-secondary);
+    color: var(--color-secondary);
+}
+
+
+/* Intro Section */
+
+.hero {
+  height: 100vh; /* Full screen height */
+  background-image: url("images/IMG_1670.JPG"); /* Path to image */
+  background-size: cover; /* Fill the section */
+  background-position: center; /* Center image */
+  background-repeat: no-repeat;
+
+
+  text-align: center;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 10px;
+}
+#hero-title {
+    font-size: 5rem;
+    color: var(--color-primary);
+    margin-bottom: 0;
+}
