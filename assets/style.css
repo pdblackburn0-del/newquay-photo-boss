@@ -41,6 +41,7 @@ p {
 
 /* Intro Section */
 
+/*Background Image*/
 .hero {
    height: 100vh;
   background-image: url("images/IMG_1670.JPG");
@@ -52,6 +53,7 @@ p {
   flex-direction: column;
   justify-content: space-between;
 }
+/*Hero text*/
 .intro {
   text-align: center;
   font-size: 1rem;
@@ -67,6 +69,7 @@ p {
     margin-bottom: 0;
 }
 
+/*Buttons styling*/
 #hero-buttons {
   display: flex;
   flex-direction: row;
@@ -76,17 +79,27 @@ p {
   padding-bottom: 26rem;
   padding-left: 20px;
 }
+
 #hero-buttons button {
   min-width: 240px;
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
   color: aliceblue;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   background-color: var(--color-secondary);
   opacity: 80%;
-
+  border-radius: 999px;
+  /*enlarge by 10% when hovered*/
+    transition: transform 0.2s ease;
 }
 
+#hero-buttons button:hover {
+  transform: scale(1.1); /* 10% bigger */
+}
+
+/*Aligns buttons on smaller screens*/
 @media (max-width: 600px) {
   #hero-buttons {
     flex-direction: column;
   }
+}
+
