@@ -126,6 +126,11 @@ p {
   transform: scale(1.1); /* 10% bigger */
 }
 
+@media (min-width: 1024px) {
+  .intro-text{
+    font-size: 1.5em;
+  }
+}
 @media (max-width: 1024px) {
 
   /* Center the logo */
@@ -148,11 +153,18 @@ p {
   /* Push buttons down */
   #hero-buttons {
     flex-direction: column;
-    padding-bottom: 8rem;
+    padding-bottom: 4rem;
     gap: 10px; 
   }
+  .intro-text{
+    color: var(--color-tertiary)
+  }
 }
-
+@media (max-width: 768px){
+  #hero-title{
+    font-size: 3rem;
+  }
+}
 
 
 
