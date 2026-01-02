@@ -138,12 +138,17 @@ p {
   /* Push title down */
   .top-center-text {
     padding-top: 10rem; /* original 5rem + extra 5rem */
+   
   }
+  #hero-title {
+    color: var(--color-tertiary)
 
+
+  }
   /* Push buttons down */
   #hero-buttons {
     flex-direction: column;
-    padding-bottom: 10rem;
+    padding-bottom: 8rem;
     gap: 10px; 
   }
 }
