@@ -42,13 +42,17 @@ p {
 /* Intro Section */
 
 .hero {
-  height: 100vh; /* Full screen height */
-  background-image: url("images/IMG_1670.JPG"); /* Path to image */
-  background-size: cover; /* Fill the section */
-  background-position: center; /* Center image */
+   height: 100vh;
+  background-image: url("images/IMG_1670.JPG");
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
 
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.intro {
   text-align: center;
   font-size: 1rem;
   display: flex;
@@ -62,3 +66,27 @@ p {
     color: var(--color-primary);
     margin-bottom: 0;
 }
+
+#hero-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding-bottom: 26rem;
+  padding-left: 20px;
+}
+#hero-buttons button {
+  min-width: 240px;
+  font-family: var(--font-secondary);
+  color: aliceblue;
+  font-size: 1.5rem;
+  background-color: var(--color-secondary);
+  opacity: 80%;
+
+}
+
+@media (max-width: 600px) {
+  #hero-buttons {
+    flex-direction: column;
+  }
