@@ -166,5 +166,59 @@ p {
   }
 }
 
+/* =========================
+   Navbar styling
+========================= */
 
+.navbar {
+  width: 100%;
+  background-color: var(--color-tertiary); /* aliceblue */
+  position: relative;
+  z-index: 10;
+}
+
+/* Inner container */
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 2rem;
+}
+
+/* Brand / title */
+.navbar-brand {
+  font-family: var(--font-primary);
+  font-size: 10rem;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+/* Nav list */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+/* Links */
+.nav-links a {
+  font-family: var(--font-secondary);
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover */
+.nav-links a:hover {
+  background-color: var(--color-accent);
+  color: var(--color-tertiary);
+}
 
