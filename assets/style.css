@@ -334,3 +334,22 @@ p {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+
+/*contact strip*/
+.social-contact-strip {
+  background-color: var(--color-secondary);
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.social-contact-strip ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-contact-strip a {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
