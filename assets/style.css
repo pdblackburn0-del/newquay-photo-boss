@@ -171,6 +171,7 @@ p {
 ========================= */
 
 .navbar {
+  padding : 0.5rem 0.5rem;
   width: 100%;
   background-color: var(--color-tertiary); /* aliceblue */
   position: relative;
@@ -179,23 +180,21 @@ p {
 
 /* Inner container */
 .navbar-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0.5rem 2rem;
 
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+  width: 100%;
 }
+
 /* Navbar Logo */
 .navbar-logo img {
-  height: 80px;
-  margin-right: auto;
+  height: 100px;
 }
 /* Brand / title */
 .navbar-brand {
   font-family: var(--font-primary);
-  font-size: 10rem;
+  font-size: 2rem !important;
   color: var(--color-primary);
   white-space: nowrap;
 }
@@ -205,7 +204,9 @@ p {
   list-style: none;
   display: flex;
   gap: 2rem;
+  margin-left: auto; /* 👈 pushes links to the far right */
 }
+
 
 /* Links */
 .nav-links a {
@@ -215,7 +216,6 @@ p {
   font-size: 1rem;
   padding: 0.5rem 0.75rem;
   border-radius: 999px;
-
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
