@@ -186,9 +186,12 @@ p {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 2rem;
 }
-
+/* Navbar Logo */
+.navbar-logo img {
+  height: 80px;
+  margin-right: auto;
+}
 /* Brand / title */
 .navbar-brand {
   font-family: var(--font-primary);
