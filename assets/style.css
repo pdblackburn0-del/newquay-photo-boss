@@ -317,3 +317,12 @@ p {
 .galleries {
   background-color: lightblue
 }
+
+/*Homepage Title Styling*/
+.homepage-title {
+  font-size: 4rem;
+  color: var(--color-primary);
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
