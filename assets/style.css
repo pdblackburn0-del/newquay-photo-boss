@@ -312,3 +312,8 @@ p {
 .nav-links a:focus {
   outline: none;
 }
+
+/* Gallery styling */
+.galleries {
+  background-color: lightblue
+}
