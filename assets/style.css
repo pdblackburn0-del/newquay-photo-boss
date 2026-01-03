@@ -170,8 +170,9 @@ p {
    Navbar styling
 ========================= */
 
+/* Navbar container */
 .navbar {
-  padding : 0.5rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   width: 100%;
   background-color: var(--color-tertiary); /* aliceblue */
   position: relative;
@@ -180,35 +181,35 @@ p {
 
 /* Inner container */
 .navbar-container {
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  position: relative; /* ensures absolute menu positions correctly */
 }
 
 /* Navbar Logo */
 .navbar-logo img {
   height: 100px;
 }
+
 /* Brand / title */
 .navbar-brand {
   font-family: var(--font-primary);
-  font-size: 2rem !important;
+  font-size: 3rem !important;
   color: var(--color-primary);
   white-space: nowrap;
 }
 
-/* Nav list */
+/* Nav list (desktop) */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 2rem;
-  margin-left: auto; /* 👈 pushes links to the far right */
+  margin-left: auto; /* pushes links to the far right */
 }
 
-
-/* Links */
+/* Nav links styling */
 .nav-links a {
   font-family: var(--font-secondary);
   color: var(--color-secondary);
@@ -219,9 +220,95 @@ p {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Hover */
+/* Hover effect */
 .nav-links a:hover {
   background-color: var(--color-accent);
   color: var(--color-tertiary);
 }
 
+/* =========================
+   Hamburger menu (mobile)
+========================= */
+
+/* Hamburger icon - hidden on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+/* Hamburger bars */
+.hamburger div {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* =========================
+   Mobile styles (≤768px)
+========================= */
+@media screen and (max-width: 768px) {
+
+  /* Navbar container adjustments for mobile */
+  .navbar-container {
+    display: flex;
+    justify-content: space-between; /* brand left, hamburger right */
+    align-items: center;
+    position: relative;
+  }
+
+  /* Hamburger visible on mobile */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide nav links initially */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* below navbar */
+    right: 0;
+    width: 100%; /* full width */
+    background-color: var(--color-tertiary);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 0 0 8px 8px;
+    z-index: 20;
+  }
+
+  /* Show nav links when hamburger is clicked */
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Mobile nav links styling */
+  .nav-links li {
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+
+  /* Adjust brand size on mobile */
+  .navbar-brand {
+    font-size: 2rem !important;
+  }
+}
+/* Remove blue highlight on tap/click (mobile) */
+.nav-links a,
+.nav-links li {
+  -webkit-tap-highlight-color: transparent; /* iOS / Safari */
+  -webkit-touch-callout: none; /* Disable long-press menu */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  user-select: none; /* Prevent text selection */
+  outline: none; /* Remove outline on click/focus */
+}
+
+/* Optional: remove default focus outline for accessibility */
+.nav-links a:focus {
+  outline: none;
+}
