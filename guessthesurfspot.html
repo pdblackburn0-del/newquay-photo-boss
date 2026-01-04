@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Guess the Surf Spot | Newquay Photo Boss</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Guess the surf spot from the photo. A fun surf photography game by Newquay Photo Boss.">
+  <meta name="author" content="Pete Blackburn">
+
+  <link rel="stylesheet" href="/assets/style.css">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/38689ff253.js" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="galleries">
+
+<!-- Social strip -->
+<div class="social-contact-strip">
+  <ul id="socials">
+    <a href="tel:07397632632" class="phone-link">
+      <li><i class="fa-solid fa-phone"></i>07397632632</li>
+    </a>
+    <li><a href="https://www.instagram.com/newquayphotoboss" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+    <li><a href="https://www.youtube.com/@newquayphotoboss" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+  </ul>
+</div>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="navbar-container">
+    <div class="nav-left">
+      <span class="navbar-logo">
+        <img src="/assets/images/finallogo.png" alt="Newquay Photo Boss Logo">
+      </span>
+      <span class="navbar-brand">Newquay Photo Boss</span>
+    </div>
+
+    <div class="hamburger">
+      <div></div><div></div><div></div>
+    </div>
+
+    <ul class="nav-links nav-right">
+      <li><a href="homepage.html">Galleries</a></li>
+      <li><a href="guessthesurfspot.html">Guess the Surf Spot</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- Game Section -->
+<section id="guess-the-spot" class="container text-center mt-5">
+
+  <h1 class="homepage-title">Guess the Surf Spot</h1>
+  <p class="fistral-title">Can you name where this wave is?</p>
+
+  <div class="col-10 col-md-8 mx-auto">
+
+    <img id="spotImage" src="assets/images/IMG_3804.JPG"
+         class="img-fluid mb-4"
+         alt="Guess the surf spot">
+
+    <div class="mb-3">
+      <input type="text" id="guessInput" class="form-control"
+             placeholder="Enter surf spot name">
+    </div>
+
+    <button class="btn btn-dark mb-3" onclick="checkGuess()">Submit Guess</button>
+
+    <p id="resultMessage"></p>
+
+    <button class="btn btn-outline-dark mt-3" onclick="nextSpot()">Next Spot</button>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="social-contact-strip footer-strip mt-5">
+  <ul id="socials">
+    <li class="footer-text">© 2026 Pete Blackburn</li>
+    <li class="footer-text">
+      All photographs are copyright protected and may not be used without permission.
+    </li>
+  </ul>
+</footer>
+
+<!-- Guess the Surf Spot Game Script -->
+<script>
+  const spots = [
+    {
+      image: "assets/images/IMG_3804.JPG",
+      answer: "Fistral"
+    },
+    {
+      image: "assets/images/Leven1.JPG",
+      answer: "Porthleven"
+    },
+    {
+      image: "assets/images/Yorkshire3.JPG",
+      answer: "Yorkshire"
+    }
+  ];
+
+  let currentSpot = 0;
+
+  function checkGuess() {
+    const userGuess = document.getElementById("guessInput").value.toLowerCase();
+    const correctAnswer = spots[currentSpot].answer.toLowerCase();
+    const result = document.getElementById("resultMessage");
+
+    if (userGuess.includes(correctAnswer)) {
+      result.textContent = "✅ Correct!";
+      result.style.color = "green";
+    } else {
+      result.textContent = "❌ Not quite — try again!";
+      result.style.color = "red";
+    }
+  }
+
+  function nextSpot() {
+    currentSpot = (currentSpot + 1) % spots.length;
+    document.getElementById("spotImage").src = spots[currentSpot].image;
+    document.getElementById("guessInput").value = "";
+    document.getElementById("resultMessage").textContent = "";
+  }
+</script>
+
+<!-- Hamburger Script -->
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
